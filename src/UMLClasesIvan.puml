@@ -32,4 +32,26 @@ class BoardMember {
 
 }
 
+AAUOC o-- Location
+
+AAUOC o-- Event
+
+AAUOC o-- Person
+
+Location - Event
+
+Person -- Conference
+
+Event <|-- Conference
+
+Event <|-- BoardMeeting
+
+Person <|-down- Member
+
+Member <|-down- BoardMember
+
+Member - Event
+
+BoardMember - BoardMeeting
+
 @enduml
