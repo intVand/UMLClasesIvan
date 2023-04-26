@@ -39,15 +39,15 @@ class BoardMember {
 
 }
 
-AAUOC o-- Location
+AAUOC o-down- "0..*" Location
 
-AAUOC o-- Event
+AAUOC o-down- "0..*" Event
 
-AAUOC o-- Person
+AAUOC o-left- "0..*" Person
 
-Location - Event
+Location "1" - "0..*" Event : isLocatedIn
 
-Person -- Conference
+Person "0..*" -- "0..*" Conference : attendsTo
 
 Event <|-- Conference
 
@@ -57,8 +57,8 @@ Person <|-down- Member
 
 Member <|-down- BoardMember
 
-Member - Event
+Member "0..*" - "0..*" Event : attendsTo
 
-BoardMember - BoardMeeting
+BoardMember "0..*" - "0..*" BoardMeeting : attendsTo
 
 @enduml
